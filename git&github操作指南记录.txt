@@ -1,0 +1,185 @@
+Last login: Fri Aug 27 16:32:23 on console
+localhost:~ yhw$ git --version
+git version 2.17.2 (Apple Git-113)
+localhost:~ yhw$ mkdir learn_git
+localhost:~ yhw$ cd learn_git/
+localhost:learn_git yhw$ ls -al
+total 0
+drwxr-xr-x   2 yhw  staff    64  9  7 11:24 .
+drwxr-xr-x+ 42 yhw  staff  1344  9  7 11:24 ..
+localhost:learn_git yhw$ git init
+Initialized empty Git repository in /Users/yhw/learn_git/.git/
+localhost:learn_git yhw$ ls -al
+total 0
+drwxr-xr-x   3 yhw  staff    96  9  7 11:24 .
+drwxr-xr-x+ 42 yhw  staff  1344  9  7 11:24 ..
+drwxr-xr-x   9 yhw  staff   288  9  7 11:24 .git
+localhost:learn_git yhw$ git config --global user.name "Com-Tec"
+localhost:learn_git yhw$ git config --global user.email "yyunwan@126.com"
+localhost:learn_git yhw$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	learn_git.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+localhost:learn_git yhw$ git add .
+localhost:learn_git yhw$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   learn_git.html
+
+localhost:learn_git yhw$ git commit -m "创建learn_git.html文件"
+[master (root-commit) 4b03af8] 创建learn_git.html文件
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 learn_git.html
+localhost:learn_git yhw$ git status
+On branch master
+nothing to commit, working tree clean
+localhost:learn_git yhw$ git remote add origin git@yyunwan@126.com:Com-Tec/learn_git.git
+localhost:learn_git yhw$ git remote
+origin
+localhost:learn_git yhw$ git push -u origin main
+error: src refspec main does not match any.
+error: failed to push some refs to 'git@yyunwan@126.com:Com-Tec/learn_git.git'
+localhost:learn_git yhw$ git branch -M main
+localhost:learn_git yhw$ git push -u origin main
+ssh: connect to host 126.com port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+localhost:learn_git yhw$ git remote add origin https://github.com/Com-Tec/learn_git.git
+fatal: remote origin already exists.
+localhost:learn_git yhw$ git remote rm origin
+localhost:learn_git yhw$ git remote add origin https://github.com/Com-Tec/learn_git.git
+localhost:learn_git yhw$ git push -u origin main
+Username for 'https://github.com': Annieyyw
+Password for 'https://Annieyyw@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Com-Tec/learn_git.git/'
+localhost:learn_git yhw$ git push -u origin main
+fatal: unable to access 'https://github.com/Com-Tec/learn_git.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 
+localhost:learn_git yhw$ git remote
+origin
+localhost:learn_git yhw$ git remote add origin https://github.com/Com-Tec/learn_git.git
+fatal: remote origin already exists.
+localhost:learn_git yhw$ git remote rm origin
+localhost:learn_git yhw$ git remote add origin https://github.com/Com-Tec/learn_git.git
+localhost:learn_git yhw$ git push -u origin main
+Username for 'https://github.com': Annyyw
+Password for 'https://Annyyw@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/Com-Tec/learn_git.git/'
+localhost:learn_git yhw$ git push -u origin main
+Username for 'https://github.com': Annyyw
+Password for 'https://Annyyw@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/Com-Tec/learn_git.git/'
+localhost:learn_git yhw$ git config --global user.name "Annyyw"
+localhost:learn_git yhw$ git push -u origin main
+fatal: unable to access 'https://github.com/Com-Tec/learn_git.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 
+localhost:learn_git yhw$ git remote rm origin
+localhost:learn_git yhw$ git remote add origin https://github.com/Com-Tec/learn_git.git
+localhost:learn_git yhw$ git push -u origin main
+Username for 'https://github.com': Annyyw
+Password for 'https://Annyyw@github.com': 
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/Com-Tec/learn_git.git/'
+localhost:learn_git yhw$ git remote rm origin
+localhost:learn_git yhw$ git remote add origin git@github.com:Com-Tec/learn_git.git
+localhost:learn_git yhw$ git remote
+origin
+localhost:learn_git yhw$ ssh-keygen -t rsa -C "yyunwan@126.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/yhw/.ssh/id_rsa): 
+Created directory '/Users/yhw/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/yhw/.ssh/id_rsa.
+Your public key has been saved in /Users/yhw/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:+PUC8895kNQyoe1VrdTXs44b9rtU2X5N6rk6GE4No/Q yyunwan@126.com
+The key's randomart image is:
++---[RSA 2048]----+
+|               .o|
+|            . ..*|
+|           o + o+|
+|       .. + = +.o|
+|      ..So.* =o.+|
+|       ..=E.=+ =o|
+|        .oooo.=.+|
+|          o+.+oo.|
+|            =+++o|
++----[SHA256]-----+
+localhost:learn_git yhw$ cd /Users/yhw/.ssh
+localhost:.ssh yhw$ ls
+id_rsa		id_rsa.pub
+localhost:.ssh yhw$ cat id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNYrNdVCAHlmvaArixlhEYJIIso4UVoWOzq9MjywrU5XBWRVqnmIyng6OlPJ/N/5rt3yvOz33WSOuiNWm4BbpXsr9y6uAhOvwziJclFKDanLHqE2aJ4+CWPEO2mj3vCjXjEqt2RUv2TC7HGtdgeyU+9xD3HZtLQTx3tZt3zmqMuX13tqP45rGhg67TYFbDNiv2B0g2LkKT72Qj4ADV2LNKmIOrQtxmcxhxkMIxHaXcTFUkNAjT0mZtiWsZMJM+BNfwPDBBmR8BkjfRMXEhMX7/ypZuiOf9BuEXXRmLF6Z5KbfSewdomAx5Qcv90RAQCN3JxAz6T5agEqxgNuuTHur/ yyunwan@126.com
+localhost:.ssh yhw$ ssh -T git@github.com
+The authenticity of host 'github.com (20.205.243.166)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,20.205.243.166' (RSA) to the list of known hosts.
+Hi Annyyw! You've successfully authenticated, but GitHub does not provide shell access.
+localhost:.ssh yhw$ cd /Users/yhw/learn_git/
+localhost:learn_git yhw$ git push -u origin main
+Warning: Permanently added the RSA host key for IP address '13.250.177.223' to the list of known hosts.
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 238 bytes | 238.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:Com-Tec/learn_git.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+localhost:learn_git yhw$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   learn_git.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+localhost:learn_git yhw$ git add learn_git.html
+localhost:learn_git yhw$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   learn_git.html
+
+localhost:learn_git yhw$ git commit -m "添加head信息"
+[main bee501b] 添加head信息
+ 1 file changed, 4 insertions(+)
+localhost:learn_git yhw$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+localhost:learn_git yhw$ git push -u origin main
+Warning: Permanently added the RSA host key for IP address '13.229.188.59' to the list of known hosts.
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 295 bytes | 295.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:Com-Tec/learn_git.git
+   4b03af8..bee501b  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+localhost:learn_git yhw$ 
