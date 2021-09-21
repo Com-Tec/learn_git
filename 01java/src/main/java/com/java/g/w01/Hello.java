@@ -2,7 +2,7 @@ package com.java.g.w01;
 
 public class Hello {
     public static void main(String[] args) {
-        //  System.out.println("hello class main() executed.");
+
         String s1="5";
         String s2=new String("5");
         int i1=5;
