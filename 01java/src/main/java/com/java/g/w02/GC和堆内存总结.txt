@@ -1,0 +1,16 @@
+
+
+GC性能的主要指标，吞吐量、暂停时间、垃圾回收频率等，GC策略选择依赖于应用服务器的配置、预期目标等。
+
+
+年轻代的GC策略:SerialGC、ParNew、Parallel Scavenge
+老年代的GC策略：SerialOLd、ParallelOld、CMS、G1
+
+SerialGC，适用于单CPU、新生代空间较小、对暂停时间要求不是非常高的应用。
+ParNew：与老年代的GC策略配合使用。
+Parallel Scavenge，适用于多CPU、对暂停时间要求较短的应用，吞吐量高。
+CMS、G1:响应速度快。
+并发标记和清除GC算法CMS、G1适合网络服务端应用的最佳算法.并行GC算法适合那些内部可预测的应用.
+
+youngGC发生频繁，可以新生代扩容，降低了youngGC频率。如果堆内存中，长期存活的对象比较多，会增加youngGC 时间。短暂存活的对象比较多，youngGC时间变化不明显。
+
